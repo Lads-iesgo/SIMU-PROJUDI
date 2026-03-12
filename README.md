@@ -4,9 +4,8 @@ Projeto acadêmico de simulação do sistema Projudi desenvolvido por alunos da 
 
 ## 👥 Autores
 
-- Halbert
-- Caue
-- Eduardo
+- 
+- 
 
 ## 📋 Pré-requisitos
 
