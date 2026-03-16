@@ -15,13 +15,15 @@ from .forms import CadastroPublicoForm, LoginForm
 #     next_page = reverse_lazy("acesso:login")
 
 
+
+
 def cadastrar(request):
     if request.method == "POST":
         form = CadastroPublicoForm(request.POST)
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect("core:home")
+            return redirect("base:base/home")
     else:
         form = CadastroPublicoForm()
 
