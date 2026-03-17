@@ -40,9 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'acesso',
-    'usuarios',
-    'processos',
+    'agendamentos',
     'base',
+    'ciclos',
+    'dominios',
+    'movimentacoes',
+    'processos',
 ]
 
 MIDDLEWARE = [
@@ -129,6 +132,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
+
+# Mídia PROTEGIDA (documentos)
+PRIVATE_STORAGE_ROOT = os.path.join(BASE_DIR, 'arquivos_privados')
 
 # login redirects
 # LOGIN_URL = 'login'
