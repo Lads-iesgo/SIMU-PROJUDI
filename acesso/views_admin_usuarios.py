@@ -69,3 +69,7 @@ def usuario_atualizar(request):
                 messages.error(request, erro)
 
     return redirect("acesso:usuario_lista")
+
+
+def painel_administrativo(request):
+    return render(request, "acesso/painel_administrativo.html")
