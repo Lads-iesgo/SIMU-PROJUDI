@@ -14,6 +14,7 @@ class Usuario(AbstractUser):
 
     
     email = models.EmailField("email", blank=False, unique=True)
+    is_coordenador = models.BooleanField("coordenador", default=False)
 
     tipo_perfil_global = models.CharField(
         max_length=20,
