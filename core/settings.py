@@ -108,6 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 AUTH_USER_MODEL = "acesso.Usuario" # informa ao Django para usar o modelo de usuário personalizado
+LOGOUT_REDIRECT_URL = 'acesso:login' # redireciona para a página de login após logout
 
 
 # Internationalization
