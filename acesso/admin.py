@@ -6,14 +6,14 @@ from .models import Usuario
 
 @admin.register(Usuario)
 class UsuarioAdmin(UserAdmin):
-    list_display = ("username", "email", "tipo_perfil_global", "is_staff", "is_active")
+    list_display = ("username", "email", "tipo_perfil_global", "is_staff", "is_active", "is_coordenador")
     list_filter = ("tipo_perfil_global", "is_staff", "is_active")
     search_fields = ("username", "email")
 
     fieldsets = UserAdmin.fieldsets + (
-        ("Projudi Acadêmico", {"fields": ("tipo_perfil_global",)}),
+        ("Projudi Acadêmico", {"fields": ("tipo_perfil_global","is_coordenador")}),
     )
     
     add_fieldsets = UserAdmin.add_fieldsets + (
-        ("Projudi Acadêmico", {"fields": ("tipo_perfil_global", "email")}),
+        ("Projudi Acadêmico", {"fields": ("tipo_perfil_global", "email","is_coordenador")}),
     )
