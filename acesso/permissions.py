@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from .models import Usuario
+from usuarios.models import Usuario
 
 
 def pode_gerenciar_usuarios(user: Usuario) -> bool:
@@ -8,7 +8,6 @@ def pode_gerenciar_usuarios(user: Usuario) -> bool:
         Quem pode acessar a página de gestão de usuários.
         - Admin, Coordenador e Professor podem (Aluno e Pendente não podem).
     """
-    print(f"Verificando permissão para {user} (tipo_perfil_global={getattr(user, 'tipo_perfil_global', None)})")
     if not user.is_authenticated:
         return False
     

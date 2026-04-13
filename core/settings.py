@@ -39,11 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'usuarios',
     'acesso',
     'agendamentos',
     'base',
     'ciclos',
-    'dominios',
     'movimentacoes',
     'processos',
 ]
@@ -107,7 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-AUTH_USER_MODEL = "acesso.Usuario" # informa ao Django para usar o modelo de usuário personalizado
+AUTH_USER_MODEL = "usuarios.Usuario" # informa ao Django para usar o modelo de usuário personalizado
 LOGOUT_REDIRECT_URL = 'acesso:login' # redireciona para a página de login após logout
 
 

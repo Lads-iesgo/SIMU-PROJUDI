@@ -4,9 +4,9 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect, render
 from django.http import Http404
+from usuarios.models import Usuario
 
 from .forms_admin_usuarios import AtualizarUsuarioForm
-from .models import Usuario
 from .permissions import tipos_que_pode_atribuir, pode_gerenciar_usuarios
 
 

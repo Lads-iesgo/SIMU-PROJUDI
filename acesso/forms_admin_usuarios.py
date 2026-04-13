@@ -1,7 +1,8 @@
 from __future__ import annotations
 
 from django import forms
-from .models import Usuario
+from usuarios.models import Usuario
+
 from .permissions import tipos_que_pode_atribuir
 
 class AtualizarUsuarioForm(forms.Form):
@@ -38,10 +39,9 @@ class AtualizarUsuarioForm(forms.Form):
     def aplicar(self):
         self.alvo.is_active = self.cleaned_data['is_active']
         self.alvo.tipo_perfil_global = self.cleaned_data['tipo_perfil_global']
-        print(f"forms_admin_usuarios: Atualizando usuário {self.alvo.email}: is_active={self.alvo.is_active}, tipo_perfil_global={self.alvo.tipo_perfil_global}")
-        if self.alvo.tipo_perfil_global == "Coordenador" :
+        if self.alvo.tipo_perfil_global == Usuario.TipoPerfilGlobal.COORDENADOR:
             self.alvo.is_coordenador = True
-            self.alvo.is_staff = True  # Coordenadores também são staff # NOATA: isso é necessário para acessar o admin, mas pode ser repensado se for criado um painel de administração customizado
+            self.alvo.is_staff = True # Coordenadores também são staff # NOATA: isso é necessário para acessar o admin, mas pode ser repensado se for criado um painel de administração customizado
         else:
             self.alvo.is_coordenador = False
             self.alvo.is_staff = False
